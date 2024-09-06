@@ -10,17 +10,9 @@ function App() {
         </a>
       </div>
 
-      <div>
-        {filelist.map((entry, index) => (
-          <div key={index}>
-            <div>{entry.text}</div>
-            <audio controls>
-              <source
-                src={`/audio/roadwork/001/${entry.file}`}
-                type="audio/mpeg"
-              />
-            </audio>
-          </div>
+      <div className="results">
+        {filelist.map((entry) => (
+          <span className="sentence">{entry.text}</span>
         ))}
       </div>
     </>

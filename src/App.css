@@ -23,3 +23,8 @@
   background-color: yellowgreen;
   margin: 0.5em;
 }
+
+.sentence:hover {
+  background-color: gold;
+  cursor: pointer;
+}

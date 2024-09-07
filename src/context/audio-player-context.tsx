@@ -23,6 +23,7 @@ interface AudioPlayerContextType {
   setTimeProgress: Dispatch<SetStateAction<number>>;
   duration: number;
   setDuration: Dispatch<SetStateAction<number>>;
+  trackIndex: number;
   setTrackIndex: Dispatch<SetStateAction<number>>;
   audioRef: RefObject<HTMLAudioElement>;
   progressBarRef: RefObject<HTMLInputElement>;
@@ -54,6 +55,7 @@ export const AudioPlayerProvider = ({ children }: { children: ReactNode }) => {
     setTimeProgress,
     duration,
     setDuration,
+    trackIndex,
     setTrackIndex,
     isPlaying,
     setIsPlaying,

@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from "react";
 import { filelist } from "./filelist";
 import "./App.css";
-import { useAudioPlayerContext, Track } from "./context/audio-player-context";
+import { useAudioPlayerContext } from "./context/audio-player-context";
 
 function App() {
   const {
@@ -11,11 +11,18 @@ function App() {
     duration,
     setTimeProgress,
     progressBarRef,
+    trackIndex,
     setTrackIndex,
     setCurrentTrack,
     isPlaying,
     setIsPlaying,
   } = useAudioPlayerContext();
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 25 / 100;
+    }
+  }, [audioRef]);
 
   const updateProgress = useCallback(() => {
     if (audioRef.current && progressBarRef.current && duration) {
@@ -75,8 +82,13 @@ function App() {
     };
   }, [handleNext, audioRef]);
 
-  const handleClick = (track: Track) => {
-    setCurrentTrack(track);
+  const handleClick = (idx: number) => {
+    if (trackIndex === idx && isPlaying) {
+      setIsPlaying(false);
+      return;
+    }
+    setTrackIndex(idx);
+    setCurrentTrack(filelist[idx]);
     setIsPlaying(true);
   };
 
@@ -104,8 +116,10 @@ function App() {
         {filelist.map((entry, idx) => (
           <span
             key={idx}
-            onClick={() => handleClick(entry)}
-            className="sentence"
+            onClick={() => handleClick(idx)}
+            className={
+              idx == trackIndex && isPlaying ? "isPlaying" : "sentence"
+            }
           >
             {entry.text}
           </span>

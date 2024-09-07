@@ -36,6 +36,12 @@
   cursor: pointer;
 }
 
+.isPlaying {
+  color: black;
+  background-color: gold;
+  cursor: pointer;
+}
+
 .searchbar {
   text-align: center;
   padding: 1em;

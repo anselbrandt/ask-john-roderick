@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.volume = 25 / 100;
+      audioRef.current.volume = 50 / 100;
     }
   }, [audioRef]);
 

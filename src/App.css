@@ -34,12 +34,14 @@
 .sentence:hover {
   background-color: gold;
   cursor: pointer;
+  margin: 0.5em;
 }
 
 .isPlaying {
   color: black;
   background-color: gold;
   cursor: pointer;
+  margin: 0.5em;
 }
 
 .searchbar {

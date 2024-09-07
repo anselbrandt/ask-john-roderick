@@ -2,6 +2,12 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  color: whitesmoke;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
 }
 
 .logo {
@@ -9,9 +15,10 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+  color: dodgerblue;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #5f9ea0);
 }
 
 .results {
@@ -27,4 +34,9 @@
 .sentence:hover {
   background-color: gold;
   cursor: pointer;
+}
+
+.searchbar {
+  text-align: center;
+  padding: 1em;
 }

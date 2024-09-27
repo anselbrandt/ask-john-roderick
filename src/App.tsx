@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from "react";
-import { filelist } from "./filelist";
+import { filelist } from "./data/filelist";
 import "./App.css";
 import { useAudioPlayerContext } from "./context/audio-player-context";
 
@@ -106,7 +106,7 @@ function App() {
       </div>
       <div>
         <audio
-          src={`/audio/roadwork/001/${currentTrack.file}`}
+          src={currentTrack.file}
           ref={audioRef}
           onLoadedMetadata={onLoadedMetadata}
         />
